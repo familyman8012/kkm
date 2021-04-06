@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="noScroll">
+    <div class="mask"></div>
+    <div class="wrap_kk_main ">
+        <div class="head">
+            <span class="wrap_nation ko"></span>
+            <h1 class="logo"><span class="hiddenZoneV">KKMUSEUM</span></h1>
+            <div class="util">
+                <i class="reg_work"><span class="blind">작품등록</span></i>
+                <i class="reg_profile"><span class="blind">프로필등록</span></i>
+            </div>
+        </div>
+        <div class="wrap_special_gulim">
+            <div class="box_picture_frame">
+                <div class="area_picture_frame"></div>
+                <div class="area_img">
+                    <img src="./images/bg_frame_basic.png" class="img" />
+                    <!-- <img src="./images/bg_frame_basic.png" class="img" /> -->
+                </div>
+            </div>
+            <div class="info">
+                <div class="reg ko"></div>
+                <div class="txt">
+                    <p><span data-i18n="workCode.txt1"></span> : KKM-G1</p>
+                    <p>liz***@nvam.org</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrap_lightbox">
+            <section></section>
+            <div class="lightbox">
+                <div class="filter"></div>
+            </div>
+        </div>
+        <div class="wrap_login">
+            <form>
+                <div class="box_login">
+                    <input type="email" name="email" id="login_id" class="login_inp" autocomplete="username" data-i18n="[placeholder]placeholder.txt1" />
+                    <input type="password" name="password" id="login_pwd" class="login_inp lst" autocomplete="current-password" data-i18n="[placeholder]placeholder.txt2" />
+                    <span id="btn_login" class="btn_login" data-i18n="login.txt2"></span>
+                    <div class="util">
+                        <input type="checkbox" id="box2"><label for="box2" data-i18n="login.txt1"></label>
+                        <span class="btn search" data-i18n="login.txt3"></span>
+                        <span class="btn sch_pwd" data-i18n="login.txt4"></span>
+                    </div>
+                    <span class="btn_reg" data-i18n="login.txt5"></span>
+                </div>
+            </form>
+        </div>
+        <div class="wrap_reg_user">
+            <div class="cont country" style="display:none;">
+                <h2>회원가입</h2>
+                <h3>국가설정</h3>
+                <ul class="list">
+                    <li>
+                        <label for="sel_ko" class="txt_na ko">대한민국</label>
+                        <input type="radio" checked name="sel_country" id="sel_ko"><i class="open"><span class="blind">선택</span></i>
+                    </li>
+                    <li><span class="txt_na us">미국</span></li>
+                    <li><span class="txt_na cha">중국</span></li>
+                    <li><span class="txt_na jpn">일본</span></li>
+                </ul>
+                <ul class="list list2">
+                    <li><span class="txt_na us">필리핀</span></li>
+                    <li><span class="txt_na cha">베트남</span></li>
+                    <li><span class="txt_na indn">인도네시아</span></li>
+                    <li><span class="txt_na hk">홍콩</span></li>
+                </ul>
+                <div id="btn_country" class="btn_reg_user">다 음</div>
+            </div>
+            <div class="cont user_reg" style="display:none;">
+                <form id="t_data" onsubmit="return false">
+                    <div class="wrap_form_agree">
+                        <h2>회원가입</h2>
+                        <div class="box_agree">
+                            <div class="wrap_yakwan">
+                                <h3>약관동의</h3>
+                                <div class="all_agree">
+                                    <input type="checkbox" id="allagree">
+                                    <label for="allagree">전체동의</label>
+                                </div>
+                                <ul class="list_yakwan">
+                                    <li>
+                                        <span class="box_doc">
+                                            <input type="checkbox" id="doc1">
+                                            <label for="doc1">전자상거래 이용 약관</label>
+                                        </span>
+                                        <span class="btn btn_yakwan1">전체보기</span>
+                                    </li>
+                                    <li>
+                                        <span class="box_doc">
+                                            <input type="checkbox" id="doc2">
+                                            <label for="doc2">개인정보 수집 및 이용 동의</label>
+                                        </span>
+                                        <span class="btn btn_yakwan2">전체보기</span>
+                                    </li>
+                                    <li>
+                                        <span class="box_doc">
+                                            <input type="checkbox" id="doc3">
+                                            <label for="doc3">취소 및 환불 규정</label>
+                                        </span>
+                                        <span class="btn btn_yakwan3">전체보기</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="wrap_certi">
+                                <h3>정보입력</h3>
+                                <ul class="list_certi">
+                                    <li>
+                                        <span class="box_certi">
+                                            <label for="certi1"><span class="mark">*</span>연락처</label>
+                                            <input type="text" name="certi1" id="certi1" value="" placeholder="휴대폰 번호를 입력해주세요.">
+                                        </span>
+                                        <span class="btn btn_certifi_send">인증번호 전송</span>
+                                    </li>
+                                    <li class="wrap_certi_numcode">
+                                        <span class="box_certi">
+                                            <label for="certi2"><span class="mark">*</span>인증번호</label>
+                                            <input type="text" name="certi2" id="certi2" value="" placeholder="인증번호를 입력해주세요.">
+                                            <span class="timer">
+                                                <span id="timer_certi2"></span>
+                                            </span>
+                                        </span>
+                                        <span class="btn btn_certifi">인증</span>
+                                    </li>
+                                    <li>
+                                        <span class="box_certi">
+                                            <label for="email"><span class="mark">*</span>아이디</label>
+                                            <input type="email" id="email" name="email" value="" placeholder="E-mail을 입력하세요.">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="box_certi">
+                                            <label for="write_password"><span class="mark">*</span>비밀번호</label>
+                                            <input type="text" id="write_password" name="write_password" value="" placeholder="영문, 숫자 조합 8자 이상">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="box_certi">
+                                            <label for="confrim_password"><span class="mark">*</span>비밀번호 확인</label>
+                                            <input type="text" id="confrim_password" name="confrim_password" value="">
+                                            
+                                        <p class="txt_password_confirm">비밀번호가 일치하지 않습니다.</p>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div id="btn_user_reg" class="btn_reg_user">회원가입</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="cont reg_finish" style="display:none;">
+                <div class="wrap_info_fin">
+                    <h2>회원가입</h2>
+                    <p class="reg_mail">lisalabia@naum.org</p>
+                    <p class="reg_txt">KK뮤지엄 회원가입이 완료 되었습니다.</p>
+                </div>
+                <div class="wrap_congratulations">
+                    회원님의 작품을 등록하고<br />KK뮤지엄 등록작가로 활동하세요 
+                </div>
+                <div class="btn_wrap">
+                    <span id="btn_reg_next" class="btn">다음에 등록하기</span>
+                    <span id="btn_reg_finish" class="btn reg_work">작품등록하기</span>
+                </div>
+            </div>
+            <div class="cont work_reg" style="display:none;">
+                <h2>작품 등록하기</h2>
+                <div class="box_upload">
+                    <form>
+                        <div class="img_area">
+                            <input type="file" class="upload_file" />
+                            <img class="work_img" src="#" alt="image" />
+                        </div>
+                    </form>
+                    <p class="txt_work_reg txt1">회원님의 작품을 업로드 해 주세요</p>
+                    <p class="txt_work_reg txt2">권장 10MB 이하 고화질 .jpg파일 </p>                    
+                </div>
+                <div id="btn_reg_work" class="btn_reg_work">다음</div>
+            </div>
+            <div class="cont exhibition" style="display:none;">
+                <h2>개인액자 + 특별관 전시권</h2>
+                <ul class="list">
+                    <li>
+                        <label for="sel_gold" class="txt_work gold">GOLD</label>
+                        <input type="radio" checked name="sel_work" id="sel_gold" class="radio"><i class="open"><span class="blind">선택</span></i>
+                    </li>
+                    <li> <label for="sel_gold" class="txt_work silver">SILVER</label><span class="txt_schedule">출시예정</span></li>
+                    <li><label for="sel_gold" class="txt_work bronze">BRONZE</label><span class="txt_schedule">출시예정</span></li>
+                </ul>
+                <div class="wrap_payment">
+                    <form>
+                        <label for="recommend_work_num" class="label_recommend_work">추천 작품 코드</label>
+                        <input type="text" id="recommend_work_num" placeholder="예) KKM-G1" value="">
+                    </form>
+                    <p class="txt_payment">
+                        결제 포인트 : <span class="txt_point">1,000,000point</span>
+                    </p>
+                    <p class="notice">
+                        개인액자와 특별관 전시권 구매 회원님에게 활동작가의 작품을 배송해 드립니다.
+                    </p>
+                </div>
+                <div id="btn_exhibition" class="btn_reg_user">다 음</div>
+            </div>
+            <div class="cont shipping_info" style="display:none;">
+                <h2>배송정보 입력</h2>
+                <p class="txt_shipping_info">활동작가의 작품을 배송받을 주소를 입력해 주세요.</p>
+                <div class="wrap_deliver">
+                    <ul class="list_certi">
+                        <li>
+                            <div class="box_certi required">
+                                <label for="delivery_name"><span class="mark">*</span>이름</label>
+                                <input type="text" name="delivery_name" id="delivery_name" value="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_certi required">
+                                <label for="delivery_location"><span class="mark">*</span>주소</label>
+                                <div class="wrap_inp_location">
+                                    <div class="location">
+                                        <input type="text" name="delivery_location" id="delivery_location" value="">
+                                        <span class="btn" onclick="sample6_execDaumPostcode()">
+                                            우편번호 찾기
+                                        </span>
+                                    </div>
+                                    <div class="location2">
+                                        <input type="text" name="delivery_location2" id="delivery_location2" placeholder="상세주소 입력" value="">
+                                    </div>
+                                    <div class="location3">
+                                        <input type="text" name="delivery_location3" id="delivery_location3" value="">
+                                        <input type="hidden" id="sample6_extraAddress" placeholder="참고항목">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="box_certi required">
+                                <label for="delivery_tel3"><span class="mark">*</span>연락처</label>
+                                <div class="inp_box">
+                                    <select id="delivery_tel1" name="sel_tel">
+                                        <option value="010" selected>010</option>
+                                    </select>
+                                    -
+                                    <input type="text" name="delivery_tel2" id="delivery_tel2" value="">
+                                    -
+                                    <input type="text" name="delivery_tel3" id="delivery_tel3" value="">
+                                </div>
+                            </span>
+                        </li>
+                        <li>
+                            <div class="box_certi">
+                                <label for="delivery_request">배송시<br />요청사항</label>
+                                <textarea name="delivery_request" id="delivery_request" value=""></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="box_have_point">
+                        <span class="txt">보유 포인트</span>
+                        <span class="num">
+                            <em>1,000,000</em>
+                            Point
+                        </span>
+                    </div>
+                    <p class="payment_point">
+                        결제 포인트 : <strong>1,000,000 Point</strong>
+                    </p>
+                </div>
+                <div id="btn_shipping_info" class="btn_reg_user">결 제</div>
+            </div>
+            <div class="cont payment_complete" style="display:none;">
+                <h2>결제 완료</h2>
+                <p class="txt1">작품코드</p>
+                <p class="txt2">KKM-G12</p>
+                <p class="txt3">특별관 전시 대기 중 작품입니다.</p>
+                <p class="txt4"><strong>KKM-G1</strong>작품은 특별관 전시 전후로 일반 전시관에 전시됩니다.</p>
+                <div id="btn_payment_complete" class="btn_reg_user">확 인</div>
+            </div>
+            <div class="cont mypage"  style="display:none;">
+                <i class="btn_close"><span class="blind">닫기</span></i>
+                <h2>내 정보</h2>
+                <div class="wrap_mypage_cont">
+                    <div class="box_account_info">
+                        <span class="myid">계정 : lisalabia@naum.org</span>
+                        <span class="chg_pwd">비밀번호 변경</span>
+                    </div>
+                    <div class="box_special">
+                        <div class="img_area">
+                            <img src="./images/bg_frame_basic.png" alt="특별관" />
+                            <div class="box_mark">특별관<br />전시중</div>
+                        </div>
+                        <p class="code">작품코드 : KKM-G1</p>
+                        <p>작품 전시일 : 2021-02-01</p>
+                    </div>
+                    <ul class="list_have">
+                        <li class="special">
+                            <div class="thumb">
+                                <img src="./images/bg_frame_basic.png" alt="pic" />
+                            </div>
+                            <p>작품코드 : KKM-G1</p>
+                            <p>액자등급 : GOLD</p>
+                            <p>액자생성 : 2021-02-01</p>
+                            <span class="btn_sell">판매대기</span>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="./images/axa.png" alt="pic" />
+                            </div>
+                            <p>작품코드 : KKM-G10</p>
+                            <p>액자등급 : GOLD</p>
+                            <p>액자생성 : 2021-05-01</p>
+                            <span class="btn_sell on">판매가능</span>
+                        </li>
+                    </ul>
+                    <h3 class="tit_statement">내역</h3>         
+                    <div class="wrap_statement">
+                        <ul class="box_state">
+                            <li>
+                                <span class="txt">골드액자</span>
+                                <span class="num">2</span>
+                            </li>
+                            <li>
+                                <span class="txt">실버액자</span>
+                                <span class="num">0</span>
+                            </li>
+                            <li>
+                                <span class="txt">브론즈액자</span>
+                                <span class="num">0</span>
+                            </li>
+                        </ul>
+                        <ul class="box_state">
+                            <li>
+                                <span class="txt">후원포인트</span>
+                                <span class="num">1,200,000P</span>
+                            </li>
+                            <li>
+                                <span class="txt">추천포인트</span>
+                                <span class="num">2,000,000P</span>
+                            </li>
+                            <li>
+                                <span class="txt">총 보유포인트</span>
+                                <span class="num">3,200,000P</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>추천인</h4>
+                    <table class="tbl_Statement">
+                        <caption>추천인에 관한 내 작품코드, 추천날짜, 추천인계정, 추천포인트 내역정보입니다.</caption>
+                        <thead>
+                            <tr>
+                                <th>내 작품코드</th>
+                                <th>추천날짜</th>
+                                <th>추천인계정</th>
+                                <th>추천포인트</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>KMM-G10234</td>
+                                <td>
+                                    <span>2021-04-30</span>
+                                    <span>2021-04-02</span>
+                                    <span>2021-03-10</span>
+                                </td>
+                                <td>
+                                    <span>cncjszhem@gmail.net</span>
+                                    <span>xcfvzhem@gmail.net</span>
+                                    <span>liiju47@gmail.net</span>
+                                </td>
+                                <td>
+                                    <span>100,000P</span>
+                                    <span>100,000P</span>
+                                    <span>50,000P</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KMM-G10234</td>
+                                <td>
+                                    <span>2021-04-30</span>
+                                    <span>2021-04-02</span>
+                                    <span>2021-03-10</span>
+                                </td>
+                                <td>
+                                    <span>cncjszhem@gmail.net</span>
+                                    <span>xcfvzhem@gmail.net</span>
+                                    <span>liiju47@gmail.net</span>
+                                </td>
+                                <td>
+                                    <span>100,000P</span>
+                                    <span>100,000P</span>
+                                    <span>50,000P</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrap_pop pop_miss_login" style="display:none;">
+            <i class="btn_close"><span class="blind">닫기</span></i>
+            <div class="pop_cont">
+                <p>아이디 또는 비밀번호가 일치하지 않습니다.<br />확인 후 다시 로그인 해 주세요.</p>
+                <ul class="list">
+                    <li><span id="btn_link_reg" class="link">회원가입</span></li>
+                    <li><span id="btn_find_account" class="link">계정찾기</span></li>
+                    <li><span id="btn_find_pwd" class="link ">비밀번호찾기   </span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap_pop find_account" style="display:none;">
+            <i class="btn_close"><span class="blind">닫기</span></i>
+            <h2>계정찾기</h2>
+            <div class="wrap_certi">
+                <ul class="list_certi">
+                    <li>
+                        <span class="box_certi">
+                            <label for="find_certi1">연락처</label>
+                            <input type="text" name="find_certi1" id="find_certi1" value="" placeholder="휴대폰 번호를 입력해주세요.">
+                        </span>
+                        <span id="btn_findid_certi" class="btn btn2">인증번호 전송</span>
+                    </li>
+                    <li class="wrap_certi_numcode">
+                        <span class="box_certi">
+                            <label for="find_certi2">인증번호</label>
+                            <input type="text" name="find_certi2" id="find_certi2" value="" placeholder="인증번호를 입력해주세요.">
+                            <span class="timer">
+                                <span id="timer_findid"></span>
+                            </span>
+                        </span>
+                        <span id="btn_findid_certi_chk" class="btn btn2">인증</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap_pop find_account_result"  style="display:none;">
+             <i class="btn_close"><span class="blind">닫기</span></i>
+             <h2>계정찾기</h2>
+             <p class="txt_email">lisalabia@naum.org</p>
+             <ul class="list">
+                <li><span class="link link_login">로그인</span></li>
+                <li><span class="link link_pwd">비밀번호찾기</span></li>
+            </ul>
+        </div>
+        <div class="wrap_pop find_password" style="display:none;">
+            <i class="btn_close"><span class="blind">닫기</span></i>
+            <h2>비밀번호 찾기</h2>
+            <div class="wrap_certi">
+                <ul class="list_certi">
+                    <li>
+                        <span class="box_certi">
+                            <label for="find_pwd_certi1">연락처</label>
+                            <input type="text" name="find_pwd_certi1" id="find_pwd_certi1" value="" placeholder="휴대폰 번호를 입력해주세요.">
+                        </span>
+                        <span id="btn_findpwd_certi" class="btn btn2">인증번호 전송</span>
+                    </li>
+                    <li class="wrap_certi_numcode">
+                        <span class="box_certi">
+                            <label for="find_pwd_certi2">인증번호</label>
+                            <input type="text" name="find_pwd_certi2" id="find_pwd_certi2" value="" placeholder="인증번호를 입력해주세요.">
+                            <span class="timer">
+                                <span id="timer_findpwd"></span>
+                            </span>
+                        </span>
+                        <span id="btn_findpwd_certi_chk" class="btn btn2">인증</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap_pop find_password_result" style="display:none;">
+            <i class="btn_close"><span class="blind">닫기</span></i>
+            <h2>비밀번호 찾기</h2>
+            <p class="temporary_code">12dfd-ertyk</p>
+            <p class="notice">임시 비밀번호입니다.<br />내 정보에서 비밀번호를 변경해 주세요.</p>
+            <div class="link link_login">로그인</div>
+        </div>
+         <div class="wrap_pop chg_password_result"  style="display:none;">
+             <i class="btn_close"><span class="blind">닫기</span></i>
+            <h2>비밀번호 변경</h2>
+            <div class="wrap_certi">
+                <ul class="list_certi">
+                    <li>
+                        <span class="box_certi">
+                            <label for="current_pwd">기존 비밀번호</label>
+                            <input type="text" name="current_pwd" id="current_pwd" value="">
+                        </span>
+                    </li>
+                    <li>
+                        <span class="box_certi">
+                            <label for="new_pwd">새 비밀번호</label>
+                            <input type="text" name="new_pwd" id="new_pwd" value="" placeholder="영문, 숫자 조합 8자 이상">
+                        </span>
+                    </li>
+                    <li>
+                        <span class="box_certi">
+                            <label for="confirm_pwd">비밀번호 확인</label>
+                            <input type="text" name="confirm_pwd" id="confirm_pwd" value="">
+                        </span>
+                        <p class="txt_notmatch_pwd">비밀번호가 일치하지 않습니다.</p>
+                    </li>
+                </ul>
+                <div class="btn_chg_pwd">확인</div>
+            </div>    
+         </div>
+         <div class="wrap_pop work_reg" style="display:none;">
+             <i class="btn_close"><span class="blind">닫기</span></i>
+            <h2>작품 등록하기</h2>
+            <div class="box_upload">
+                <form>
+                    <div class="img_area">
+                        <input type="file" class="upload_file" />
+                        <img class="work_img" src="#" alt="image" />
+                    </div>
+                </form>
+                <p class="txt_work_reg txt1">회원님의 작품을 업로드 해 주세요</p>
+                <p class="txt_work_reg txt2">권장 10MB 이하 고화질 .jpg파일 </p>                    
+            </div>
+            <div id="btn_pop_work_reg" class="btn_reg_work">확인</div>
+        </div>
+    </div>
+    <div id="pop_yakwan"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
+    <script src="./js/lightbox.js"></script>
+    <script src="./js/lang.js"></script>
+    <script src="./js/kk_museum.js"></script>
+    
+</body>
+</html>
